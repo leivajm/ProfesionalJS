@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+    <script>//un objeto comun y corriente
+// const zelda = {
+//     name: "zelda"
+// }
+// zelda.saludar = function(){
+//     console.log(`Hola soy ${this.name}`);
+// };
+// zelda.saludar();
+// const link = {
+//     name: "Link"
+// }
+// link.saludar = function(){
+//     console.log(`Hola soy ${this.name}`);
+// };
+// link.saludar();
+//     function Hero (name){
+//         const hero = {
+//             name: name
+//         }
+//         hero.saludar = function(){
+//             console.log(`Hola soy ${this.name}`);
+//         };
+//         return hero;
+//     }
+// zelda = new Hero("Zelda")
+// zelda.saludar();
+// link = new Hero("Link")
+// link.saludar();
+//mejorarmos el código evitando crear la misma funcion cada vez
+//     const heroMethods = {
+//         saludar: function(){
+//             console.log(`Me llamo ${this.name}`);
+//         },
+//     }
+// function Hero (name){
+//         const hero = {
+//             name: name
+//         }
+//         hero.saludar = heroMethods.saludar;
+//         return hero;
+//     }
+// zelda = new Hero("Zelda")
+// zelda.saludar();
+// link = new Hero("Link")
+// link.saludar();
+//Object.create
+//recibe un objeto y crea un nuevo objeto con todas las props
+//que tiene definido el objeto que se traslada
+// pasa al apartado __proto__ (herencia prototipal)
+// const heroMethods = {
+//         saludar: function(){
+//             console.log(`Me llamo ${this.name}`);
+//         },
+//     }
+// function Hero (name){
+//         const hero = Object.create(heroMethods)
+//         hero.name = name;
+//         return hero;
+//     }
+// zelda = new Hero("Zelda")
+// zelda.saludar();
+// link = new Hero("Link")
+// link.saludar();
+//los metodos de hero dentro de hero
+// const heroMethods = {
+//         saludar: function(){
+//             console.log(`Me llamo ${this.name}`);
+//         },
+//     };
+// 
+//new es un atajo (azúcar sintáctica) para llevar Hero.prototype
+//al objeto
+function Hero(name) {
+  //new realiza la siguiente linea de forma autómatica
+  //const hero = Object.create(Hero.prototype)
+  //esto equivale a
+  //this = Object.create(Hero.prototype)
+  //esto lo realiza autómaticamente JS
+  this.name = name; //el return ocurre implicitamente, no hay que hacerlo
+  //return this;
+}
+
+Hero.prototype.saludar = function () {
+  console.log(`New:  ${this.name}`);
+};
+
+zelda = new Hero("Zelda");
+zelda.saludar();
+link = new Hero("Link");
+link.saludar();</script>
+    
+    
+</body>
+</html>

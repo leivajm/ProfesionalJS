@@ -1,0 +1,78 @@
+Curso Profesional de JavaScript
+    - npm init -y para instalar con todas las opciones en yes
+    - npm i -D live-server (-D solamente desarrollo, live server)
+    - Para utilizar el live server se configura el package.json
+        con el siguiente script
+        "scripts": {
+                "start": "live-server"
+            }
+    - No se reproduce video automaticamente por seguridad lo hace
+        el navegador
+        (UX malo)
+    - Recomendable se delega la reproducción en el boton
+    - Se puede consultar la documentación oficial para verificar
+        los metodos de los elementos del DOM
+    - No existen clases en JS solamente objetos, y de estos
+        se pueden instanciar nuevos objetos
+    - Cuando se trabaja con "clases" se necesitan metodos
+        y estos se agregan con prototype
+    
+    Como llega el documento html al browser
+    - DOM Content Loader: aqui hay garantia de que todo el doc se cargo
+    - Cuando tenemos un script embebido (dentro del html), este se lee 
+        y se ejecuta, hasta que termine continúa leyendo el doc html
+        (carga lenta, no recomenda, mala práctica)
+    - Los script externos se ejecutas inmediatamente despues de cargar
+        todos los elemento del archivo html, por lo tanto, no se ve
+        afectado el redimiento
+    - Async: ejecuta asincronamente
+    - Defer: ejecuta hasta el final
+    
+    SCOPE
+    - Alcance que tiene una variable
+    - Tiempo de vida en la que esta existe
+    - Tipos de scope:
+        - Global Scope
+            var
+        - Function Scope
+        - Block Scope
+            let
+        - Module Scope:
+            La vida de una variable esta limitada al archivo en que esta
+            definido
+            - Para exporta una clase como modulo se utiliza:
+                  export default MediaPlayer;
+            - Para importar una clase como modulo se utiliza:
+                    import MediaPlayer from './MediaPlayer'
+
+    CLOSURES
+    - Combina el poder del scope con funciones
+    - IIFE: funcion que se invoca inmediatamente
+        Inmediate Invoke Function Expression
+    - Funciones que retornan funciones, la momento de recibir la respuesta
+        agregar parentesis para ejecutarla
+    - Con closures se pueden crear variables privadas
+        No se pueden acceder ni modificar, solamente atravez del objeto
+        que se retorno
+    
+    THIS
+    - Use Strict Mode:
+        El modo estricto cambia el scope de this
+    
+    CALL, APPLY Y BIND
+    - Estos métodos son parte del prototipo de Function
+    - Nos sirven para establecer el valor de this, es decir,
+        cambiar el contexto que se va a usar cuando la función sea
+        llamada
+    CALL
+    - Ejecuta una función recibiendo como primer argumento el this(objeto)
+        y los siguientes son los parámetros que recibe la función que llamo
+        call
+    APPLY
+    - Esta hace la misma funcionalidad de call, per sus argumentos los
+        pasamos de una forma ligeramente diferente.
+    - Ejecuta una función, recibiendo como primer argumento el this(objeto)
+        y el segundo parámetro un arreglo
+    - Esto sirver cuando tenemos que pasar una lista larga de parámetros
+        a nuestra función
+    BIND

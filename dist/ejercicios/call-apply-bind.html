@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call, Apply, Bind</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+    <ul>
+        <li><button class="call-to-action">Aprender</button></li>
+        <li><button class="call-to-action">Aprender más</button></li>
+        <li><button class="call-to-action">Aprender más más</button></li>
+    </ul>
+
+
+
+    <script>//Establece 'this' usando call
+function saludar() {
+  console.log(`Hola. soy ${this.name} ${this.apellido}`);
+}
+
+const juan = {
+  name: "Juan",
+  apellido: "Perez"
+};
+saludar.call(juan);
+
+function caminar(metros, direccion) {
+  console.log(`${this.name} camina ${metros} hacia ${direccion}`);
+}
+
+caminar.call(juan, 400, 'Norte'); //establece this usando apply y pasar argumentos a la función
+
+caminar.apply(juan, [800, 'Noreste']);
+/*
+    Diferencias entre Call y Applu
+    - Call: argumentos por comas
+    - Apply: argumentos por array
+*/
+//Establecer 'this' en una nueva funcion usando bind
+
+const daniel = {
+  name: "Daniel",
+  apellido: "Sanchez"
+};
+const danielSaluda = saludar.bind(daniel);
+danielSaluda(); // const danielCamina = caminar.bind(daniel);
+// danielCamina(1000, 'este');
+//otra forma de pasar argumentos en bind
+// const danielCamina = caminar.bind(daniel, 2000, "sur");
+// danielCamina();
+//argumentos parciales en bind
+
+const danielCamina = caminar.bind(daniel, 7000);
+danielCamina("sur");
+const buttons = docu.getElementsByClassName("call-to-action"); // buttons.forEach(button => {
+//     button.onclick = () => alert("Prueba")
+// });
+//nodeList
+
+Array;</script>
+</body>
+</html>

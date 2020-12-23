@@ -1,0 +1,21 @@
+{
+  "name": "Profesional_JS",
+  "version": "1.0.0",
+  "description": "Proyecto de plugin para reproductor de video",
+  "scripts": {
+    "start": "parcel  index.html ejercicios/**/*.html"
+  },
+  "keywords": [
+    "plugin",
+    "video"
+  ],
+  "author": "José Manuel Leiva Ruano",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.0.3"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}
